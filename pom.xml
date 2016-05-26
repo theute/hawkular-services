@@ -70,7 +70,7 @@
     <version.org.hawkular.alerts>1.1.0.Final</version.org.hawkular.alerts>
     <version.org.hawkular.commons>0.7.2.Final</version.org.hawkular.commons>
     <version.org.hawkular.inventory>0.16.0.Final-SRC-revision-95d9738893fd0a536ca08919ff0a512dad2a90db</version.org.hawkular.inventory>
-    <version.org.hawkular.metrics>0.16.0.Final-SRC-revision-1b96d5e7e28863a61cae267e66c53659726191af</version.org.hawkular.metrics>
+    <version.org.hawkular.metrics>0.16.0.Final-SRC-revision-79673dd820afce75387aa56ed94af921ebd48a21</version.org.hawkular.metrics>
 
     <hawkular.agent.enabled>false</hawkular.agent.enabled>
     <hawkular.rest.user /><!-- empty in the default profile, set only in the dev profile -->
