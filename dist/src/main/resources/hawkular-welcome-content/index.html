@@ -23,7 +23,7 @@
 
 <html>
 <head>
-    <title>Welcome to Hawkular</title>
+    <title>Middleware Manager for CloudForms</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="StyleSheet" href="hawkular.css" type="text/css">
     <script>
@@ -128,11 +128,17 @@
          document.getElementById(service.name + "_unavailable").innerHTML = error;
        }
 
-       window.setInterval(function () {
+       function refreshStatus() {
          statusRequest(services.services);
          statusRequest(services.metrics);
          statusRequest(services.alerts);
          statusRequest(services.inventory);
+       }
+
+       refreshStatus();
+
+       window.setInterval(function () {
+         refreshStatus();
        }, 3000); // repeat forever, polling every 3 seconds
 
     </script>
@@ -141,20 +147,16 @@
 <body>
 <div class="wrapper">
     <div class="content">
-        <div class="logo">
-            <img src="hawkular_logo_450x450.png" alt="Hawkular Logo" />
-        </div>
-        <h1>Welcome to Hawkular</h1>
+        <h1>Middleware Manager for CloudForms</h1>
 
-        <p><a href="http://hawkular.org">Hawkular Project</a> |
-           <a href="https://issues.jboss.org/browse/HAWKULAR">Report an issue</a> |
-           <a href="/hawkular/wildfly-agent/installer">WildFly Agent Installer</a></p>
+        <p><a href="https://access.redhat.com/products/red-hat-cloudforms">Red Hat CloudForms</a> |
+           <a href="/hawkular/wildfly-agent/installer">EAP Agent Installer</a></p>
         <div class="note">
           <table>
-            <tr><td>Hawkular Services:  </td><td><span id="services_available"   class="available">Please wait...</span></td><td><span id="services_version"  ></span></td><td><span id="services_unavailable"   class="unavailable"></span></td></tr>
-            <tr><td>Hawkular Metrics:  </td><td><span id="metrics_available"   class="available">Please wait...</span></td><td><span id="metrics_version"  ></span></td><td><span id="metrics_unavailable"   class="unavailable"></span></td></tr>
-            <tr><td>Hawkular Alerts:   </td><td><span id="alerts_available"    class="available">Please wait...</span></td><td><span id="alerts_version"   ></span></td><td><span id="alerts_unavailable"    class="unavailable"></span></td></tr>
-            <tr><td>Hawkular Inventory:</td><td><span id="inventory_available" class="available">Please wait...</span></td><td><span id="inventory_version"></span></td><td><span id="inventory_unavailable" class="unavailable"></span></td></tr>
+            <tr><td>Middleware Manager Services:  </td><td><span id="services_available"   class="available">Please wait...</span></td><td><span id="services_version"  ></span></td><td><span id="services_unavailable"   class="unavailable"></span></td></tr>
+            <tr><td>Middleware Manager Metrics:  </td><td><span id="metrics_available"   class="available">Please wait...</span></td><td><span id="metrics_version"  ></span></td><td><span id="metrics_unavailable"   class="unavailable"></span></td></tr>
+            <tr><td>Middleware Manager Alerts:   </td><td><span id="alerts_available"    class="available">Please wait...</span></td><td><span id="alerts_version"   ></span></td><td><span id="alerts_unavailable"    class="unavailable"></span></td></tr>
+            <tr><td>Middleware Manager Inventory:</td><td><span id="inventory_available" class="available">Please wait...</span></td><td><span id="inventory_version"></span></td><td><span id="inventory_unavailable" class="unavailable"></span></td></tr>
           </table>
         </div>
     </div>
